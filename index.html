@@ -28,8 +28,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--fg);font-si
 @keyframes titleReveal{0%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1.1)}100%{opacity:1;transform:scale(1)}}
 .splash-title h1{font-family:'Reem Kufi';font-size:clamp(60px,12vw,120px);color:#FFD700;text-shadow:0 0 40px rgba(255,215,0,.5),0 0 80px rgba(255,215,0,.2);letter-spacing:8px}
 .splash-subtitle{font-family:'Amiri';font-size:clamp(14px,3vw,22px);color:#FFE4A0;text-align:center;margin-top:10px;opacity:0;animation:fadeIn 1.5s ease 2.5s forwards}
-.skip-btn{position:absolute;bottom:40px;z-index:20;background:rgba(255,255,255,.1);border:1px solid #FFD700;color:#FFD700;padding:12px 40px;border-radius:30px;font-size:16px;cursor:pointer;animation:fadeIn 1s ease 3s forwards;opacity:0;transition:.3s}
-.skip-btn:hover{background:#FFD700;color:#0A0E27}@keyframes fadeIn{to{opacity:1}}
+@keyframes fadeIn{to{opacity:1}}
 
 #dua-overlay{position:fixed;inset:0;z-index:8888;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .5s;padding:20px}
 #dua-overlay.show{opacity:1;pointer-events:auto}
@@ -90,9 +89,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--fg);font-si
 /* ===== حقوق الملكية (Footer) ===== */
 .footer {
   border-top: 1px solid var(--border);
-  margin-top: 20px; /* مسافة علوية أقل لرفعه للأعلى */
-  margin-right: 6px; /* إصلاح مشكلة شريط التمرير */
-  margin-bottom: 10px; /* مسافة سفلية قليلة جداً */
+  margin-top: 20px; 
+  margin-right: 6px; 
+  margin-bottom: 10px; 
   padding: 15px 20px;
   text-align: center;
   background: linear-gradient(180deg, var(--card), var(--bg));
@@ -147,7 +146,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--fg);font-si
   <div class="mosque-silhouette left"><svg width="160" height="180" viewBox="0 0 160 180" fill="#0D1A10"><rect x="60" y="60" width="40" height="120" rx="2"/><rect x="30" y="90" width="30" height="90" rx="2"/><rect x="100" y="80" width="30" height="100" rx="2"/><path d="M80 10 Q100 30 95 60 L65 60 Q60 30 80 10Z"/><path d="M45 50 Q58 65 55 90 L35 90 Q32 65 45 50Z"/><path d="M115 40 Q130 55 127 80 L103 80 Q100 55 115 40Z"/><rect x="72" y="140" width="16" height="40" rx="8 8 0 0"/><line x1="80" y1="5" x2="80" y2="0" stroke="#FFD700" stroke-width="2"/><circle cx="80" cy="3" r="3" fill="#FFD700"/></svg></div>
   <div class="mosque-silhouette right"><svg width="180" height="200" viewBox="0 0 180 200" fill="#0D1A10"><rect x="65" y="70" width="50" height="130" rx="2"/><rect x="25" y="100" width="40" height="100" rx="2"/><rect x="115" y="90" width="40" height="110" rx="2"/><path d="M90 15 Q115 40 108 70 L72 70 Q65 40 90 15Z"/><path d="M45 60 Q62 78 58 100 L32 100 Q28 78 45 60Z"/><path d="M135 50 Q155 68 150 90 L120 90 Q116 68 135 50Z"/><rect x="78" y="155" width="24" height="45" rx="12 12 0 0"/><line x1="90" y1="8" x2="90" y2="2" stroke="#FFD700" stroke-width="2"/><circle cx="90" cy="5" r="4" fill="#FFD700"/></svg></div>
   <div class="splash-title"><h1>هداية</h1></div><div class="splash-subtitle">منصة إسلامية متكاملة لنور القلب والروح</div>
-  <button class="skip-btn" onclick="skipSplash()">تخطي <i class="fas fa-arrow-left"></i></button>
 </div>
 
 <div id="dua-overlay"><div class="dua-card"><div class="ornament"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div><p>اللهم ارحم جدي الحاج عبد الدايم، وجدتي الحجة ماجدة، وصديقي أدهم سامر، وجميع موتى المسلمين، اللهم اغفر لهم وارحمهم، وعافهم واعفُ عنهم، واجعل قبورهم روضة من رياض الجنة.</p><div class="ornament"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div><button class="dua-close" onclick="closeDua()">آمين</button></div></div>
@@ -226,7 +224,7 @@ function initApp(){
 
 // ===== شاشة البداية والدعاء =====
 setTimeout(()=>{document.getElementById('splash').classList.add('shrink');setTimeout(()=>{document.getElementById('splash').style.display='none';document.getElementById('app').classList.add('show');initApp();if(!state.duaShown){setTimeout(()=>document.getElementById('dua-overlay').classList.add('show'),500)}},800);},4000);
-function skipSplash(){document.getElementById('splash').classList.add('shrink');setTimeout(()=>{document.getElementById('splash').style.display='none';document.getElementById('app').classList.add('show');initApp();if(!state.duaShown)document.getElementById('dua-overlay').classList.add('show');},400);}
+
 function closeDua(){document.getElementById('dua-overlay').classList.remove('show');localStorage.setItem('hidaya_dua_shown','true');state.duaShown=true}
 
 // ===== التنقل =====
