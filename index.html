@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>هداية - منصة إسلامية متكاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&family=Reem+Kufi:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash">
+  <div class="sky-bg"></div><div class="stars" id="stars"></div><div class="sun"></div><div class="mountain"></div>
+  <div class="mosque-silhouette left"><svg width="160" height="180" viewBox="0 0 160 180" fill="#0D1A10"><rect x="60" y="60" width="40" height="120" rx="2"/><rect x="30" y="90" width="30" height="90" rx="2"/><rect x="100" y="80" width="30" height="100" rx="2"/><path d="M80 10 Q100 30 95 60 L65 60 Q60 30 80 10Z"/><path d="M45 50 Q58 65 55 90 L35 90 Q32 65 45 50Z"/><path d="M115 40 Q130 55 127 80 L103 80 Q100 55 115 40Z"/><rect x="72" y="140" width="16" height="40" rx="8 8 0 0"/><line x1="80" y1="5" x2="80" y2="0" stroke="#FFD700" stroke-width="2"/><circle cx="80" cy="3" r="3" fill="#FFD700"/></svg></div>
+  <div class="mosque-silhouette right"><svg width="180" height="200" viewBox="0 0 180 200" fill="#0D1A10"><rect x="65" y="70" width="50" height="130" rx="2"/><rect x="25" y="100" width="40" height="100" rx="2"/><rect x="115" y="90" width="40" height="110" rx="2"/><path d="M90 15 Q115 40 108 70 L72 70 Q65 40 90 15Z"/><path d="M45 60 Q62 78 58 100 L32 100 Q28 78 45 60Z"/><path d="M135 50 Q155 68 150 90 L120 90 Q116 68 135 50Z"/><rect x="78" y="155" width="24" height="45" rx="12 12 0 0"/><line x1="90" y1="8" x2="90" y2="2" stroke="#FFD700" stroke-width="2"/><circle cx="90" cy="5" r="4" fill="#FFD700"/></svg></div>
+  <div class="splash-title"><h1 data-i18n="site_name">هداية</h1></div><div class="splash-subtitle" data-i18n="slogan">منصة إسلامية متكاملة لنور القلب والروح</div>
+</div>
+
+<div id="dua-overlay"><div class="dua-card"><div class="ornament"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div><p data-i18n="dua_text">اللهم ارحم جدي الحاج عبد الدايم، وجدتي الحجة ماجدة، وصديقي أدهم سامر، وجميع موتى المسلمين، اللهم اغفر لهم وارحمهم، وعافهم واعفُ عنهم، واجعل قبورهم روضة من رياض الجنة.</p><div class="ornament"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div><button class="dua-close" onclick="closeDua()" data-i18n="amen">آمين</button></div></div>
+
+<div id="app">
+  <header class="app-header"><div class="header-bg"></div><div class="header-overlay"></div>
+    <div class="header-controls">
+      <button class="lang-switcher" onclick="toggleLangModal()"><i class="fas fa-globe"></i> <span id="lang-text">العربية</span></button>
+    </div>
+    <div class="header-content"><h1 class="reem" data-i18n="site_name">هداية</h1><div class="header-ornament"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div><p data-i18n="slogan">منصة إسلامية متكاملة لنور القلب والروح</p></div></header>
+
+  <section id="sec-home" class="section active">
+    <div class="card" style="background:linear-gradient(135deg,var(--primary),var(--primary-l));color:#fff;cursor:default"><h3 style="color:var(--gold);margin-bottom:8px"><i class="fas fa-book-open"></i> <span data-i18n="daily_hadith">حديث اليوم</span></h3><p class="amiri" id="daily-hadith" style="line-height:2"></p></div>
+    <div class="card" style="background:linear-gradient(135deg,#1B5B4A,#0A3D2E);color:#fff;cursor:default"><h3 style="color:var(--gold);margin-bottom:8px"><i class="fas fa-hands-praying"></i> <span data-i18n="daily_dhikr">ذكر اليوم</span></h3><p class="amiri" id="daily-dhikr" style="line-height:2"></p></div>
+    <div class="features-grid">
+      <div class="feature-card green" onclick="navigate('quran')"><i class="fas fa-quran"></i><h3 data-i18n="nav_quran">المصحف الشريف</h3></div>
+      <div class="feature-card gold" onclick="navigate('juz')"><i class="fas fa-book"></i><h3 data-i18n="nav_juz">أجزاء القرآن</h3></div>
+      <div class="feature-card blue" onclick="navigate('khatma')"><i class="fas fa-check-double"></i><h3 data-i18n="nav_khatma">نظام الختمة</h3></div>
+      <div class="feature-card purple" onclick="navigate('hadith')"><i class="fas fa-book-open"></i><h3 data-i18n="nav_hadith">الأحاديث</h3></div>
+      <div class="feature-card green" onclick="navigate('azkar')"><i class="fas fa-hands-praying"></i><h3 data-i18n="nav_azkar">الأذكار</h3></div>
+      <div class="feature-card gold" onclick="navigate('duas')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_duas">الأدعية</h3></div>
+      <div class="feature-card purple" onclick="navigate('deceased')"><i class="fas fa-cross"></i><h3 data-i18n="nav_deceased">أدعية للميت</h3></div>
+      <div class="feature-card blue" onclick="navigate('prayer')"><i class="fas fa-mosque"></i><h3 data-i18n="nav_prayer">مواعيد الصلاة</h3></div>
+      <div class="feature-card green" onclick="navigate('qibla')"><i class="fas fa-compass"></i><h3 data-i18n="nav_qibla">اتجاه القبلة</h3></div>
+      <div class="feature-card purple" onclick="navigate('tafsir')"><i class="fas fa-feather-pointed"></i><h3 data-i18n="nav_tafsir">تفسير القرآن</h3></div>
+      <div class="feature-card green" onclick="navigate('stories')"><i class="fas fa-kaaba"></i><h3 data-i18n="nav_stories">قصص الأنبياء</h3></div>
+      <div class="feature-card gold" onclick="navigate('tasbih')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_tasbih">التسبيح</h3></div>
+      <div class="feature-card blue" onclick="navigate('audio')"><i class="fas fa-headphones"></i><h3 data-i18n="nav_audio">المكتبة السماعية</h3></div>
+      <div class="feature-card purple" onclick="navigate('about')"><i class="fas fa-info-circle"></i><h3 data-i18n="nav_about">عن الموقع</h3></div>
+      <div class="feature-card green" onclick="navigate('settings')"><i class="fas fa-gear"></i><h3 data-i18n="nav_settings">الإعدادات</h3></div>
+    </div>
+  </section>
+
+  <section id="sec-quran" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-quran"></i> <span data-i18n="nav_quran">المصحف الشريف</span></h2></div><div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-surah-input" oninput="searchSurah(this.value)"></div><div id="surah-list"></div></section>
+  <section id="sec-surah" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('quran')"><i class="fas fa-arrow-right"></i> <span data-i18n="back_surahs">السور</span></button><span id="surah-title-bar" style="font-weight:700;font-size:16px"></span><div style="display:flex;gap:6px"><button onclick="changeFontSize(-2)" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);cursor:pointer;color:var(--fg)">أ-</button><button onclick="changeFontSize(2)" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);cursor:pointer;color:var(--fg)">+أ</button></div></div><div id="surah-content"></div><div class="page-nav"><button id="prev-surah" onclick="prevSurah()"><i class="fas fa-arrow-right"></i> <span data-i18n="prev">السابقة</span></button><button id="next-surah" onclick="nextSurah()"><span data-i18n="next">التالية</span> <i class="fas fa-arrow-left"></i></button></div></section>
+  
+  <section id="sec-juz" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-book"></i> <span data-i18n="nav_juz">الأجزاء</span></h2></div><div class="juz-grid" id="juz-main-grid"></div></section>
+  <section id="sec-khatma" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-check-double"></i> <span data-i18n="nav_khatma">الختمة</span></h2></div><div id="khatma-content"></div></section>
+  
+  <section id="sec-hadith" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-book-open"></i> <span data-i18n="nav_hadith">الأحاديث</h2></div><div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-hadith-input" oninput="searchHadith(this.value)"></div><div class="filter-pills" id="hadith-filters"></div><div id="hadith-list"></div></section>
+  
+  <section id="sec-azkar" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-hands-praying"></i> <span data-i18n="nav_azkar">الأذكار</h2></div><div id="azkar-categories-view"></div><div id="azkar-list-view" style="display:none"></div></section>
+
+  <section id="sec-duas" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-praying-hands"></i> <span data-i18n="nav_duas">الأدعية</h2></div><div id="dua-categories-view"></div><div id="dua-list-view" style="display:none"></div></section>
+
+  <section id="sec-deceased" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-cross"></i> <span data-i18n="nav_deceased">أدعية للميت</h2></div><div id="deceased-list"></div></section>
+  
+  <section id="sec-prayer" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-mosque"></i> <span data-i18n="nav_prayer">مواعيد الصلاة</h2></div><div id="prayer-content"></div></section>
+
+  <section id="sec-qibla" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-compass"></i> <span data-i18n="nav_qibla">اتجاه القبلة</span></h2></div><div id="qibla-content" class="qibla-container"></div></section>
+
+  <section id="sec-tafsir" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-feather-pointed"></i> <span data-i18n="nav_tafsir">تفسير القرآن</h2></div><div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-tafsir-input" oninput="searchTafsirSurah(this.value)"></div><div id="tafsir-list"></div></section>
+  <section id="sec-tafsir-view" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('tafsir')"><i class="fas fa-arrow-right"></i> <span data-i18n="back_surahs">السور</span></button><span id="tafsir-title-bar" style="font-weight:700;font-size:16px"></span></div><div id="tafsir-content"></div></section>
+
+  <section id="sec-stories" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-kaaba"></i> <span data-i18n="nav_stories">قصص الأنبياء</h2></div><div id="stories-content"></div></section>
+
+  <section id="sec-tasbih" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-praying-hands"></i> <span data-i18n="nav_tasbih">التسبيح الإلكتروني</h2></div><div class="tasbih-pills" id="tasbih-pills"></div><div class="tasbih-counter"><h3 id="tasbih-current-name" style="color:var(--gold)">سبحان الله</h3><div class="tasbih-display" id="tasbih-display">0</div><button class="tasbih-btn" onclick="incrementTasbih()"><i class="fas fa-hand-pointer"></i></button><div class="tasbih-controls"><button onclick="resetTasbih()"><i class="fas fa-rotate-right"></i> <span data-i18n="reset">تصفير</span></button><button onclick="navigate('home')"><i class="fas fa-home"></i> <span data-i18n="home">الرئيسية</span></button></div></div><div class="card" style="cursor:default;margin-top:20px"><h3 style="color:var(--primary);margin-bottom:10px"><i class="fas fa-info-circle"></i> <span data-i18n="tasbih_info_title">فضل التسبيح وآدابه</span></h3><p class="amiri" style="line-height:2" data-i18n="tasbih_info_text">قال رسول الله ﷺ: "كلمتان حبيبتان إلى الرحمن، خفيفتان على اللسان، ثقيلتان في الميزان: سبحان الله وبحمده، سبحان الله العظيم". ويُسن التسبيح بالأنامل واليدي، وقد كان النبي ﷺ يعقد التسبيح بيده.</p></div></section>
+
+  <section id="sec-audio" class="section">
+    <div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-headphones"></i> <span data-i18n="nav_audio">المكتبة السماعية</h2></div>
+    <div id="reciter-view">
+      <div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-reciter-input" oninput="searchReciter(this.value)"></div>
+      <div class="reciter-grid" id="reciter-grid"></div>
+    </div>
+    <div id="surah-view" style="display:none">
+      <button class="back-btn" onclick="backToReciters()"><i class="fas fa-arrow-right"></i> القراء</button>
+      <div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-audio-surah-input" oninput="searchAudioSurah(this.value)"></div>
+      <div id="audio-surah-list"></div>
+    </div>
+  </section>
+
+  <section id="sec-about" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-info-circle"></i> <span data-i18n="nav_about">عن الموقع</h2></div><div class="card" style="cursor:default"><h3 style="color:var(--primary);margin-bottom:10px" data-i18n="about_idea_title">فكرة موقع هداية</h3><p style="line-height:2" data-i18n="about_idea_text">انبثقت فكرة موقع "هداية" لتكون منصة إسلامية متكاملة تجمع بين بساطة التصميم وروعة المحتوى، ليكون رفيقاً للمسلم في حله وترحاله، يضم القرآن الكريم وتفسيره، والأحاديث النبوية، والأذكار، ومواعيد الصلاة، وغيرها من الخدمات الروحانية.</p></div><div class="card" style="cursor:default"><h3 style="color:var(--primary);margin-bottom:10px" data-i18n="about_goal_title">الهدف من الموقع</h3><p style="line-height:2" data-i18n="about_goal_text">نسعى من خلال هذه المنصة إلى تذكير المسلمين بدينهم، وتسهيل الوصول إلى المصادر الإسلامية الموثوقة في مكان واحد، ونشر العلم النافع، والمساهمة في حفظ القرآن والأذكار اليومية.</p></div><div class="card" style="cursor:default"><h3 style="color:var(--primary);margin-bottom:10px" data-i18n="about_rights_title">حقوق المبرمج</h3><p style="line-height:2" data-i18n="about_rights_text_1">تم تصميم وبرمجة هذا الموقع بكل حب وإتقان بواسطة المبرمج: <strong style="color:var(--gold)">حازم أحمد</strong>.</p><p style="margin-top:10px" data-i18n="copyright">© 2026 هداية - جميع الحقوق محفوظة.</p></div></section>
+
+  <section id="sec-settings" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-gear"></i> <span data-i18n="nav_settings">الإعدادات</h2></div><div class="card" style="cursor:default"><div class="setting-item"><div><i class="fas fa-moon" style="color:var(--gold);margin-left:10px"></i><span data-i18n="dark_mode">الوضع الليلي</span></div><div class="toggle" id="dark-toggle" onclick="toggleDark()"></div></div><div class="setting-item"><div><i class="fas fa-text-height" style="color:var(--gold);margin-left:10px"></i><span data-i18n="font_size">حجم الخط</span></div><div style="display:flex;align-items:center;gap:10px"><button onclick="changeFontSize(-2)" style="width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-weight:700;color:var(--fg)">-</button><span id="font-size-val" style="min-width:30px;text-align:center;font-weight:700">18</span><button onclick="changeFontSize(2)" style="width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-weight:700;color:var(--fg)">+</button></div></div><div class="setting-item"><div><i class="fas fa-bell" style="color:var(--gold);margin-left:10px"></i><span data-i18n="notifications">التنبيهات</span></div><div class="toggle on" id="notif-toggle" onclick="toggleNotif(this)"></div></div><div class="setting-item" style="border:none"><div><i class="fas fa-trash-can" style="color:#E74C3C;margin-left:10px"></i><span data-i18n="clear_data">مسح البيانات</span></div><button onclick="clearData()" style="padding:8px 16px;border-radius:8px;border:1px solid #E74C3C;background:transparent;color:#E74C3C;cursor:pointer;font-weight:600" data-i18n="clear">مسح</button></div></div></section>
+
+  <footer class="footer">
+    <p data-i18n="copyright">© 2026 هداية - جميع الحقوق محفوظة.</p>
+    <p data-i18n="designed_by">تم تصميم وبرمجة الموقع بواسطة:</p>
+    <div class="developer">حازم أحمد</div>
+  </footer>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="navigate('home')" data-sec="home"><i class="fas fa-home"></i><span data-i18n="home">الرئيسية</span></button>
+    <button class="nav-item" onclick="navigate('quran')" data-sec="quran"><i class="fas fa-quran"></i><span data-i18n="quran">القرآن</span></button>
+    <button class="nav-item" onclick="navigate('azkar')" data-sec="azkar"><i class="fas fa-hands-praying"></i><span data-i18n="azkar">الأذكار</span></button>
+    <button class="nav-item" onclick="navigate('prayer')" data-sec="prayer"><i class="fas fa-mosque"></i><span data-i18n="prayer">الصلاة</span></button>
+    <button class="nav-item" onclick="navigate('audio')" data-sec="audio"><i class="fas fa-headphones"></i><span data-i18n="audio">الصوتيات</span></button>
+  </nav>
+
+  <div class="sticky-player" id="sticky-player">
+    <img id="sp-img" class="sp-img" src="">
+    <div class="sp-info">
+      <div class="sp-surah-name" id="sp-surah-name">سورة الفاتحة</div>
+      <div class="sp-reciter-name" id="sp-reciter-name">أحمد العجمي</div>
+    </div>
+    <div class="sp-time" id="sp-current-time">0:00</div>
+    <div class="sp-progress" onclick="seekSticky(event)"><div class="sp-progress-fill" id="sp-fill"></div></div>
+    <div class="sp-time" id="sp-duration">0:00</div>
+    <div class="sp-controls">
+      <button class="sp-btn" onclick="prevStickySurah()"><i class="fas fa-backward"></i></button>
+      <button class="sp-btn play" id="sp-play-btn" onclick="toggleStickyPlay()"><i class="fas fa-pause"></i></button>
+      <button class="sp-btn" onclick="nextStickySurah()"><i class="fas fa-forward"></i></button>
+      <button class="sp-btn" onclick="closeStickyPlayer()"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+  <audio id="main-audio" onended="nextStickySurah()"></audio>
+
+  <div class="lang-modal" id="lang-modal">
+    <div class="lang-modal-content">
+      <h3 data-i18n="select_language">اختر اللغة</h3>
+      <div id="lang-list"></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
