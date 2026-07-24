@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0A3D2E">
 <title>هداية - منصة إسلامية متكاملة</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&family=Reem+Kufi:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -37,6 +38,9 @@
       <div class="feature-card green" onclick="navigate('azkar')"><i class="fas fa-hands-praying"></i><h3 data-i18n="nav_azkar">الأذكار</h3></div>
       <div class="feature-card gold" onclick="navigate('duas')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_duas">الأدعية</h3></div>
       <div class="feature-card purple" onclick="navigate('deceased')"><i class="fas fa-hand-holding-heart"></i><h3 data-i18n="nav_deceased">أدعية للميت</h3></div>
+      <div class="feature-card blue" onclick="navigate('afterlife')"><i class="fas fa-dove"></i><h3 data-i18n="nav_afterlife">رحلة الإنسان بعد الموت</h3></div>
+      <div class="feature-card gold" onclick="navigate('judgment')"><i class="fas fa-cloud-bolt"></i><h3 data-i18n="nav_judgment">أهوال يوم القيامة</h3></div>
+      <div class="feature-card purple" onclick="navigate('ghusl')"><i class="fas fa-water"></i><h3 data-i18n="nav_ghusl">طريقة تغسيل الميت</h3></div>
       <div class="feature-card blue" onclick="navigate('prayer')"><i class="fas fa-mosque"></i><h3 data-i18n="nav_prayer">مواعيد الصلاة</h3></div>
       <div class="feature-card green" onclick="navigate('qibla')"><i class="fas fa-compass"></i><h3 data-i18n="nav_qibla">اتجاه القبلة</h3></div>
       <div class="feature-card purple" onclick="navigate('tafsir')"><i class="fas fa-feather-pointed"></i><h3 data-i18n="nav_tafsir">تفسير القرآن</h3></div>
@@ -44,8 +48,8 @@
       <div class="feature-card gold" onclick="navigate('seerah')"><i class="fas fa-star-and-crescent"></i><h3 data-i18n="nav_seerah">سيرة النبي ﷺ</h3></div>
       <div class="feature-card purple" onclick="navigate('tasbih')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_tasbih">التسبيح</h3></div>
       <div class="feature-card blue" onclick="navigate('audio')"><i class="fas fa-headphones"></i><h3 data-i18n="nav_audio">المكتبة السماعية</h3></div>
-      <div class="feature-card purple" onclick="navigate('about')"><i class="fas fa-info-circle"></i><h3 data-i18n="nav_about">عن الموقع</h3></div>
-      <div class="feature-card green" onclick="navigate('settings')"><i class="fas fa-gear"></i><h3 data-i18n="nav_settings">الإعدادات</h3></div>
+      <div class="feature-card green" onclick="navigate('about')"><i class="fas fa-info-circle"></i><h3 data-i18n="nav_about">عن الموقع</h3></div>
+      <div class="feature-card gold" onclick="navigate('settings')"><i class="fas fa-gear"></i><h3 data-i18n="nav_settings">الإعدادات</h3></div>
     </div>
   </section>
 
@@ -63,6 +67,30 @@
 
   <section id="sec-deceased" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="nav_deceased">أدعية للميت</h2></div><div id="deceased-list"></div></section>
   
+  <section id="sec-afterlife" class="section">
+    <div class="toolbar">
+      <button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button>
+      <h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-dove"></i> <span data-i18n="nav_afterlife">رحلة الإنسان بعد الموت</span></h2>
+    </div>
+    <div id="afterlife-content"></div>
+  </section>
+
+  <section id="sec-judgment" class="section">
+    <div class="toolbar">
+      <button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button>
+      <h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-cloud-bolt"></i> <span data-i18n="nav_judgment">أهوال يوم القيامة</span></h2>
+    </div>
+    <div id="judgment-content"></div>
+  </section>
+
+  <section id="sec-ghusl" class="section">
+    <div class="toolbar">
+      <button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button>
+      <h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-water"></i> <span data-i18n="nav_ghusl">طريقة تغسيل الميت</span></h2>
+    </div>
+    <div id="ghusl-content"></div>
+  </section>
+
   <section id="sec-prayer" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-mosque"></i> <span data-i18n="nav_prayer">مواعيد الصلاة</h2></div><div id="prayer-content"></div></section>
 
   <section id="sec-qibla" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-compass"></i> <span data-i18n="nav_qibla">اتجاه القبلة</span></h2></div><div id="qibla-content" class="qibla-container"></div></section>
@@ -130,7 +158,7 @@
       <button class="sp-btn" onclick="closeStickyPlayer()"><i class="fas fa-times"></i></button>
     </div>
   </div>
-  <audio id="main-audio" onended="nextStickySurah()"></audio>
+  <audio id="main-audio" onended="nextStickySurah()" playsinline></audio>
 
   <div class="lang-modal" id="lang-modal">
     <div class="lang-modal-content">
