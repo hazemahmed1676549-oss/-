@@ -41,7 +41,8 @@
       <div class="feature-card green" onclick="navigate('qibla')"><i class="fas fa-compass"></i><h3 data-i18n="nav_qibla">اتجاه القبلة</h3></div>
       <div class="feature-card purple" onclick="navigate('tafsir')"><i class="fas fa-feather-pointed"></i><h3 data-i18n="nav_tafsir">تفسير القرآن</h3></div>
       <div class="feature-card green" onclick="navigate('stories')"><i class="fas fa-kaaba"></i><h3 data-i18n="nav_stories">قصص الأنبياء</h3></div>
-      <div class="feature-card gold" onclick="navigate('tasbih')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_tasbih">التسبيح</h3></div>
+      <div class="feature-card gold" onclick="navigate('seerah')"><i class="fas fa-star-and-crescent"></i><h3 data-i18n="nav_seerah">سيرة النبي ﷺ</h3></div>
+      <div class="feature-card purple" onclick="navigate('tasbih')"><i class="fas fa-praying-hands"></i><h3 data-i18n="nav_tasbih">التسبيح</h3></div>
       <div class="feature-card blue" onclick="navigate('audio')"><i class="fas fa-headphones"></i><h3 data-i18n="nav_audio">المكتبة السماعية</h3></div>
       <div class="feature-card purple" onclick="navigate('about')"><i class="fas fa-info-circle"></i><h3 data-i18n="nav_about">عن الموقع</h3></div>
       <div class="feature-card green" onclick="navigate('settings')"><i class="fas fa-gear"></i><h3 data-i18n="nav_settings">الإعدادات</h3></div>
@@ -70,6 +71,15 @@
   <section id="sec-tafsir-view" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('tafsir')"><i class="fas fa-arrow-right"></i> <span data-i18n="back_surahs">السور</span></button><span id="tafsir-title-bar" style="font-weight:700;font-size:16px"></span></div><div id="tafsir-content"></div></section>
 
   <section id="sec-stories" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-kaaba"></i> <span data-i18n="nav_stories">قصص الأنبياء</h2></div><div id="stories-content"></div></section>
+
+  <section id="sec-seerah" class="section">
+    <div class="toolbar">
+      <button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button>
+      <h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-star-and-crescent"></i> <span data-i18n="nav_seerah">سيرة النبي ﷺ</span></h2>
+    </div>
+    <div class="search-box"><i class="fas fa-search"></i><input type="text" id="search-seerah-input" oninput="searchSeerah(this.value)" placeholder="ابحث في السيرة..."></div>
+    <div id="seerah-content"></div>
+  </section>
 
   <section id="sec-tasbih" class="section"><div class="toolbar"><button class="back-btn" onclick="navigate('home')"><i class="fas fa-arrow-right"></i> <span data-i18n="home">الرئيسية</span></button><h2 class="section-title" style="margin:0;font-size:22px"><i class="fas fa-praying-hands"></i> <span data-i18n="nav_tasbih">التسبيح الإلكتروني</h2></div><div class="tasbih-pills" id="tasbih-pills"></div><div class="tasbih-counter"><h3 id="tasbih-current-name" style="color:var(--gold)">سبحان الله</h3><div class="tasbih-display" id="tasbih-display">0</div><button class="tasbih-btn" onclick="incrementTasbih()"><i class="fas fa-hand-pointer"></i></button><div class="tasbih-controls"><button onclick="resetTasbih()"><i class="fas fa-rotate-right"></i> <span data-i18n="reset">تصفير</span></button><button onclick="navigate('home')"><i class="fas fa-home"></i> <span data-i18n="home">الرئيسية</span></button></div></div><div class="card" style="cursor:default;margin-top:20px"><h3 style="color:var(--primary);margin-bottom:10px"><i class="fas fa-info-circle"></i> <span data-i18n="tasbih_info_title">فضل التسبيح وآدابه</span></h3><p class="amiri" style="line-height:2" data-i18n="tasbih_info_text">قال رسول الله ﷺ: "كلمتان حبيبتان إلى الرحمن، خفيفتان على اللسان، ثقيلتان في الميزان: سبحان الله وبحمده، سبحان الله العظيم". ويُسن التسبيح بالأنامل واليدي، وقد كان النبي ﷺ يعقد التسبيح بيده.</p></div></section>
 
